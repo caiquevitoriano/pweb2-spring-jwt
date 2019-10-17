@@ -1,4 +1,10 @@
 package com.example.demo.repository;
 
-public interface AdminRepository {
+import com.example.demo.model.Admin;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AdminRepository extends JpaRepository<Admin, Long> {
+
+    Admin findByUsername(String username);
+
 }
