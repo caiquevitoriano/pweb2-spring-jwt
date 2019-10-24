@@ -47,6 +47,10 @@ public class AdminController {
 
     @PutMapping
     public Admin put(@RequestBody Admin admin){
+
+        admin.setPassword(bCryptPasswordEncoder.encode(admin.getPassword()));
+        System.out.println(admin);
+
         return adminRepository.save(admin);
     }
 
